@@ -141,36 +141,37 @@ const Sidebar = () => {
     </button>
   </div>
 </div>
+{/* Mobile Bottom Nav */}
+<div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg">
+  <div className="flex items-center justify-around px-2 py-2 landscape:flex-row landscape:justify-evenly">
+    {mobileSidebarItems.map((item, index) => (
+      <button
+        key={index}
+        onClick={item.onClick}
+        className={`flex flex-col items-center justify-center p-2 rounded-lg transition-colors relative
+          landscape:flex-row landscape:space-x-2 landscape:p-3
+          ${item.isAddButton
+            ? 'bg-red-500 text-white rounded-full w-12 h-12 shadow-lg landscape:w-auto landscape:rounded-lg landscape:px-4 landscape:py-2'
+            : item.active
+              ? 'text-red-500'
+              : 'text-gray-500 hover:text-gray-700'
+          }`}
+      >
+        {item.isAddButton ? (
+          <item.icon className="h-6 w-6 landscape:mr-2" />
+        ) : (
+          <>
+            <item.icon className={`h-5 w-5 mb-1 landscape:mb-0 ${item.active ? 'text-red-500' : ''}`} />
+            <span className={`text-xs font-medium landscape:text-sm ${item.active ? 'text-red-500' : ''}`}>
+              {item.label}
+            </span>
+          </>
+        )}
+      </button>
+    ))}
+  </div>
+</div>
 
-      {/* Mobile Bottom Nav */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg">
-        <div className="flex items-center justify-around px-2 py-2">
-          {mobileSidebarItems.map((item, index) => (
-            <button
-              key={index}
-              onClick={item.onClick}
-              className={`flex flex-col items-center justify-center p-2 rounded-lg transition-colors relative ${
-                item.isAddButton
-                  ? 'bg-red-500 text-white rounded-full w-12 h-12 shadow-lg'
-                  : item.active
-                    ? 'text-red-500'
-                    : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              {item.isAddButton ? (
-                <item.icon className="h-6 w-6" />
-              ) : (
-                <>
-                  <item.icon className={`h-5 w-5 mb-1 ${item.active ? 'text-red-500' : ''}`} />
-                  <span className={`text-xs font-medium ${item.active ? 'text-red-500' : ''}`}>
-                    {item.label}
-                  </span>
-                </>
-              )}
-            </button>
-          ))}
-        </div>
-      </div>
 
       {/* Mobile Overlay */}
       {isDropdownOpen && (
