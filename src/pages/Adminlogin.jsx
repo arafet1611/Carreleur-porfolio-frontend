@@ -51,11 +51,8 @@ const AdminLoginPage = () => {
 
       if (data.success) {
         // Store token in localStorage or secure storage
-        if (formData.rememberMe) {
           localStorage.setItem('adminToken', data.data.token);
-        } else {
-          sessionStorage.setItem('adminToken', data.data.token);
-        }
+      
         
         setSuccess('Connexion réussie! Redirection...');
         
@@ -161,19 +158,7 @@ const AdminLoginPage = () => {
             </div>
 
             {/* Remember Me Checkbox */}
-            <div className="mb-6 flex items-center">
-              <input
-                type="checkbox"
-                id="rememberMe"
-                name="rememberMe"
-                checked={formData.rememberMe}
-                onChange={handleInputChange}
-                className="h-4 w-4 text-red-600 focus:ring-red-500 border-gray-300 rounded"
-              />
-              <label htmlFor="rememberMe" className="ml-2 block text-sm text-gray-700">
-                Se souvenir de moi
-              </label>
-            </div>
+           
 
             {/* Success Message */}
             {success && (
