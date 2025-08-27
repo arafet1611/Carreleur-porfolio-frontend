@@ -34,6 +34,7 @@ if(token)
     // Close mobile menu when clicking on a link
     const handleLinkClick = (path) => {
         setIsMenuOpen(false);
+        navigate(path);
         setCurrentPath(path);
     };
 
@@ -113,7 +114,7 @@ if(token)
 
                             {/* Admin Login/Dashboard Icon */}
                             <button 
-                                onClick={() => handleLinkClick(isAuthenticated ? ()=> navigate('/admin') : navigate('/admin-login')) }
+                                onClick={() => handleLinkClick(isAuthenticated ? ()=> navigate('/admin') :navigate('/admin-login')) }
                                 className={`p-2 transition-colors duration-300 ml-4 ${
                                     isScrolled ? 'text-black' : 'text-white'
                                 }`}
