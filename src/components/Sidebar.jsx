@@ -161,16 +161,12 @@ const Sidebar = () => {
               {item.isAddButton ? (
                 <>
                   <item.icon className="h-6 w-6 landscape:h-4 landscape:w-4" />
-                  <span className="hidden landscape:inline-block landscape:text-xs landscape:ml-1">
-                    {item.label}
-                  </span>
+                  
                 </>
               ) : (
                 <>
                   <item.icon className={`h-5 w-5 mb-1 landscape:mb-0 landscape:h-4 landscape:w-4 ${item.active ? 'text-red-500' : ''}`} />
-                  <span className={`text-xs font-medium landscape:text-[10px] landscape:ml-1 ${item.active ? 'text-red-500' : ''}`}>
-                    {item.label}
-                  </span>
+                  
                 </>
               )}
             </button>
