@@ -1,0 +1,44 @@
+{
+  "resources": [
+    {
+      "title": "Find me on Mastodon",
+      "link": "https://indieweb.social/@kendalmintcode",
+      "imageUrl": "https://picsum.photos/300?random=1"
+    },
+    {
+      "title": "Welcome to K-Tech",
+      "link": "https://k-tech.systems",
+      "imageUrl": "https://picsum.photos/300?random=2"
+    },
+    {
+      "title": "Some sort of third title",
+      "link": "https://indieweb.social/@kendalmintcode",
+      "imageUrl": "https://picsum.photos/300?random=3"
+    },
+    {
+      "title": "Fourth item, why not?",
+      "link": "https://indieweb.social/@kendalmintcode",
+      "imageUrl": "https://picsum.photos/300?random=4"
+    },
+    {
+      "title": "Fifth item, just because",
+      "link": "https://indieweb.social/@kendalmintcode",
+      "imageUrl": "https://picsum.photos/300?random=5"
+    },
+    {
+      "title": "Sixth item, why not?",
+      "link": "https://indieweb.social/@kendalmintcode",
+      "imageUrl": "https://picsum.photos/300?random=6"
+    },
+    {
+      "title": "Seventh item, just because",
+      "link": "https://indieweb.social/@kendalmintcode",
+      "imageUrl": "https://picsum.photos/300?random=7"
+    },
+    {
+      "title": "Super item number the last",
+      "link": "https://indieweb.social/@kendalmintcode",
+      "imageUrl": "https://picsum.photos/300?random=8"
+    }
+  ]
+}
