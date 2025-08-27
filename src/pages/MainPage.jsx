@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Services from '../components/Services';
-import FeaturedProjectsCarousel from '../Components/ImageCarousel ';
+import FeaturedProjectsCarousel from '../components/ImageCarousel ';
 import AboutMe from '../components/AboutMe';
 import ContactForm from '../components/ContactForm';
 
