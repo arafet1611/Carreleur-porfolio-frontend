@@ -10,20 +10,21 @@
     -webkit-appearance: none;
   }
 }
-@media (orientation: landscape) {
-  .landscape-flex-row {
-    flex-direction: row !important;
-    justify-content: space-evenly !important;
+@media (max-height: 500px) and (orientation: landscape) {
+  .desktop-sidebar {
+    display: none !important;
   }
-  .landscape-icon-label {
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
+  .mobile-navbar, .mobile-bottom-nav {
+    display: flex !important;
   }
-  .landscape-add-btn {
-    width: auto !important;
-    border-radius: 0.75rem !important;
-    padding: 0.5rem 1rem !important;
+}
+
+@media (min-width: 900px) {
+  .mobile-navbar, .mobile-bottom-nav {
+    display: none !important;
+  }
+  .desktop-sidebar {
+    display: flex !important;
   }
 }
 @tailwind base;

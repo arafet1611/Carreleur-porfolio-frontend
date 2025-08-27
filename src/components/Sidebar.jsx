@@ -58,7 +58,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Mobile Navbar - Now shows in both portrait and landscape */}
-      <div className="sm:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
         <div className="flex items-center justify-between px-4 py-3 landscape:px-6 landscape:py-2">
           <div className="flex items-center">
             <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3 landscape:w-6 landscape:h-6 landscape:mr-2">
@@ -96,7 +96,7 @@ const Sidebar = () => {
       </div>
 
       {/* Desktop Sidebar */}
-      <div className="hidden sm:flex w-64 bg-white shadow-sm h-screen flex-col sticky top-0">
+      <div className="hidden md:flex w-64 bg-white shadow-sm h-screen flex-col sticky top-0">
         {/* Profile Section */}
         <div className="p-6 border-b flex-shrink-0">
           <div className="flex flex-col items-center">
@@ -143,7 +143,7 @@ const Sidebar = () => {
       </div>
 
       {/* Mobile Bottom Nav */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg">
         <div className="flex items-center justify-around px-2 py-2 landscape:flex-row landscape:justify-evenly landscape:px-4 landscape:py-1">
           {mobileSidebarItems.map((item, index) => (
             <button
@@ -181,7 +181,7 @@ const Sidebar = () => {
       {/* Mobile Overlay */}
       {isDropdownOpen && (
         <div 
-          className="sm:hidden fixed inset-0 z-40 bg-black bg-opacity-25"
+          className="md:hidden fixed inset-0 z-40 bg-black bg-opacity-25"
           onClick={() => setIsDropdownOpen(false)}
         />
       )}
