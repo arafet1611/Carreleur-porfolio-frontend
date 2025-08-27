@@ -1,4 +1,4 @@
-import RecentProjects from "../components/recentProjects";
+import RecentProjects from "../components/RecentProjects";
 import { useEffect } from "react";
 export default function ServicesPage() {
   useEffect(() => {
