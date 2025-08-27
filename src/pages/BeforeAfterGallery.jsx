@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import RecentProjects from "../components/recentProjects";
+import RecentProjects from "../components/RecentProjects";
 export default function BeforeAfterGallery() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [project, setProject] = useState(null);
