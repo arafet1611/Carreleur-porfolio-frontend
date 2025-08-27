@@ -152,9 +152,9 @@ const Navbar = () => {
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div
-              className={`md:hidden mt-6 rounded-lg p-6 transition-colors duration-300 ${
+              className={`md:hidden mt-6  p-6 transition-colors duration-300 ${
                 isScrolled
-                  ? "bg-white border border-gray-200"
+                  ? "bg-white "
                   : "bg-black bg-opacity-90"
               }`}
             >
@@ -185,7 +185,7 @@ const Navbar = () => {
                       : ""
                   }`}
                 >
-                  PORTFOLIO
+                  PROJETS
                 </button>
                 <button
                   onClick={() => handleLinkClick("/services")}
@@ -211,26 +211,7 @@ const Navbar = () => {
                 >
                   CONTACT
                 </button>
-                {/* Admin Login in Mobile Menu */}
-                <button
-                  onClick={() =>
-                    handleLinkClick(isAuthenticated ? "/admin" : "/admin/login")
-                  }
-                  className={`text-left text-sm font-light tracking-wide hover:opacity-70 transition-all duration-300 flex items-center ${
-                    isActive(isAuthenticated ? "/admin" : "/admin/login")
-                      ? `opacity-100 border-l-2 pl-2 ${
-                          isScrolled ? "border-black" : "border-white"
-                        }`
-                      : ""
-                  }`}
-                >
-                  {isAuthenticated ? (
-                    <LockOpen size={16} className="mr-2" />
-                  ) : (
-                    <Lock size={16} className="mr-2" />
-                  )}
-                  {isAuthenticated ? "ADMIN DASHBOARD" : "ADMIN LOGIN"}
-                </button>
+                
               </div>
             </div>
           )}
