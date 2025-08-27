@@ -7,6 +7,7 @@ export default function BeforeAfterGallery() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams(); // Get project ID from URL
+  const API = import.meta.env.VITE_API_URL || '/api';
  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -22,7 +23,7 @@ export default function BeforeAfterGallery() {
         setLoading(true);
         setError(null);
         
-        const response = await fetch(`/api/projects/${id}`);
+        const response = await fetch(`${API}/api/projects/${id}`);
         
         if (!response.ok) {
           if (response.status === 404) {

@@ -27,7 +27,7 @@ import {
 import NoteCard from "../components/Noteslist/NoteCard";
 import Sidebar from "../components/Sidebar";
 import TopNavigation from "../components/TopNavigation";
-
+const API = import.meta.env.VITE_API_URL || '/api';
 const notesAPI = {
   // Get all notes with filters
   getNotes: async (filters = {}) => {
@@ -37,8 +37,7 @@ const notesAPI = {
         queryParams.append(key, value);
       }
     });
-
-    const response = await fetch(`/api/notes?${queryParams}`, {
+    const response = await fetch(`${API}/api/notes?${queryParams}`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -53,7 +52,7 @@ const notesAPI = {
 
   // Get single note
   getNote: async (id) => {
-    const response = await fetch(`/api/notes/${id}`, {
+    const response = await fetch(`${API}/api/notes/${id}`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -68,7 +67,7 @@ const notesAPI = {
 
   // Create new note
   createNote: async (noteData) => {
-    const response = await fetch(`/api/notes`, {
+    const response = await fetch(`${API}/api/notes`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +84,7 @@ const notesAPI = {
 
   // Update note
   updateNote: async (id, noteData) => {
-    const response = await fetch(`/api/notes/${id}`, {
+    const response = await fetch(`${API}/api/notes/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -102,7 +101,7 @@ const notesAPI = {
 
   // Delete note
   deleteNote: async (id) => {
-    const response = await fetch(`/api/notes/${id}`, {
+    const response = await fetch(`${API}/api/notes/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -123,7 +122,7 @@ const notesAPI = {
     formData.append("caption", caption);
     formData.append("alt", alt);
 
-    const response = await fetch(`/api/notes/${noteId}/upload-image`, {
+    const response = await fetch(`${API}/api/notes/${noteId}/upload-image`, {
       method: "POST",
       body: formData,
     });
@@ -140,7 +139,7 @@ const notesAPI = {
     const formData = new FormData();
     files.forEach((file) => formData.append("images", file));
 
-    const response = await fetch(`/api/notes/${noteId}/upload-images`, {
+    const response = await fetch(`${API}/api/notes/${noteId}/upload-images`, {
       method: "POST",
       body: formData,
     });
@@ -154,7 +153,7 @@ const notesAPI = {
 
   // Add content block
   addContentBlock: async (noteId, type, contentData) => {
-    const response = await fetch(`/api/notes/${noteId}/content`, {
+    const response = await fetch(`${API}/api/notes/${noteId}/content`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -171,7 +170,7 @@ const notesAPI = {
 
   // Remove content block
   removeContentBlock: async (noteId, blockIndex) => {
-    const response = await fetch(`/api/notes/${noteId}/content/${blockIndex}`, {
+    const response = await fetch(`${API}/api/notes/${noteId}/content/${blockIndex}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

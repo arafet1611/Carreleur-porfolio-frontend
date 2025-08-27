@@ -17,7 +17,7 @@ const Sidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
+  const API = import.meta.env.VITE_API_URL || '/api';
   // Determine active states based on current path
   const isAnnoncesActive = location.pathname === '/admin/dashboard' || 
                           location.pathname.startsWith('/admin/dashboard/project-update/');
@@ -28,7 +28,7 @@ const Sidebar = () => {
   
   const handleLogout = async () => {
     try {
-      await fetch('/api/logout', {
+      await fetch(`${API}/api/logout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       });

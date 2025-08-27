@@ -30,7 +30,7 @@ export default function AdminProfile() {
   const [isChangingPassword, setIsChangingPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
-
+const API = import.meta.env.VITE_API_URL || '/api';
   // Admin data state
   const [adminData, setAdminData] = useState({
     username: "",
@@ -58,7 +58,7 @@ export default function AdminProfile() {
   const fetchAdminData = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/admin/verify', {
+      const response = await fetch(`${API}/api/admin/verify`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -103,7 +103,7 @@ export default function AdminProfile() {
     setLoading(true);
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/admin/profile', {
+      const response = await fetch(`${API}/api/admin/profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -144,7 +144,7 @@ export default function AdminProfile() {
     setLoading(true);
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('/api/admin/change-password', {
+      const response = await fetch(`${API}/api/admin/change-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

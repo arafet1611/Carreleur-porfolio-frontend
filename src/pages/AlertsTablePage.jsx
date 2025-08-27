@@ -46,12 +46,12 @@ const filteredAlerts = alerts.filter(alert => {
     );
   });
   // API base URL - adjust this to match your backend URL
-
+const API = import.meta.env.VITE_API_URL || '/api';
   // Fetch messages from backend
   const fetchMessages = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`/api/messages`);
+      const response = await fetch(`${API}/api/messages`);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -93,7 +93,7 @@ const filteredAlerts = alerts.filter(alert => {
   // Update message status
   const updateMessageStatus = async (messageId, newStatus) => {
     try {
-      const response = await fetch(`/api/messages/${messageId}/status`, {
+      const response = await fetch(`${API}/api/messages/${messageId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

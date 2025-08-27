@@ -27,7 +27,7 @@ export default function ProjectDetailsUpdate({ project, onUpdate, onRefresh }) {
   });
   const [newImage, setNewImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
-
+const API = import.meta.env.VITE_API_URL || '/api';
   // Initialize form with project data
   useEffect(() => {
     if (project) {
@@ -85,7 +85,7 @@ export default function ProjectDetailsUpdate({ project, onUpdate, onRefresh }) {
         formDataToSend.append('mainImage', newImage);
       }
 
-      const response = await fetch(`/api/projects/${project._id}`, {
+      const response = await fetch(`${API}/api/projects/${project._id}`, {
         method: 'PUT',
       
         body: formDataToSend,

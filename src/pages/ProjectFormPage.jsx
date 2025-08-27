@@ -10,7 +10,7 @@ import {
 import TopNavigation from "../components/TopNavigation";
 import Sidebar from "../components/Sidebar";
 import { useNavigate } from "react-router-dom";
-
+const API = import.meta.env.VITE_API_URL || '/api';
 export default function ProjectForm() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -112,7 +112,7 @@ export default function ProjectForm() {
         }
       });
 
-      const response = await fetch("/api/projects", {
+      const response = await fetch(`${API}/api/projects`, {
         method: "POST",
         body: formDataToSend,
       });
@@ -143,7 +143,7 @@ export default function ProjectForm() {
       setTimeout(() => {
         setIsSubmitting(false);
         setSubmitMessage("");
-        navigateTo("/admin/dashboard");
+        navigateTo(`${API}/admin/dashboard`);
       }, 1000);
     } catch (error) {
       console.error("Error creating project:", error);

@@ -13,14 +13,14 @@ const ContactForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-
+const API = import.meta.env.VITE_API_URL || '/api';
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('/api/messages', {
+      const response = await fetch(`${API}/api/messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

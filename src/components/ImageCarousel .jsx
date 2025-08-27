@@ -9,14 +9,14 @@ const FeaturedProjectsCarousel = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate(); // Add useNavigate hook
-
+const API = import.meta.env.VITE_API_URL || '/api';
   // Fetch projects from API
   const fetchProjects = async () => {
     try {
       setLoading(true);
       setError(null);
       
-      const response = await fetch('/api/projects/public?limit=6');
+      const response = await fetch(`${API}/api/projects/public?limit=6`);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

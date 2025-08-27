@@ -12,7 +12,7 @@ const ProjectUpdate = () => {
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+const API = import.meta.env.VITE_API_URL || '/api';
 
   // Fetch project data
   const fetchProject = async () => {
@@ -20,7 +20,7 @@ const ProjectUpdate = () => {
       setLoading(true);
       setError(null);
       
-      const response = await fetch(`/api/projects/${id}`, {
+      const response = await fetch(`${API}/api/projects/${id}`, {
         headers: {
           'Content-Type': 'application/json',
         },

@@ -12,7 +12,7 @@ export default function Projects() {
     { name: "SERVICES", id: "services", path: "/services" },
     { name: "CONTACT", id: "contact", path: "/contact" },
   ];
-
+const API = import.meta.env.VITE_API_URL || '/api';
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -23,7 +23,7 @@ export default function Projects() {
       setLoading(true);
       setError(null);
 
-      const response = await fetch("/api/projects/public");
+      const response = await fetch(`${API}/api/projects/public`);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

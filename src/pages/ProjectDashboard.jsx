@@ -22,14 +22,14 @@ export default function ProjectDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
+const API = import.meta.env.VITE_API_URL || '/api';
   // Fetch projects from API
   const fetchProjects = async () => {
     try {
       setLoading(true);
       setError(null);
 
-      const response = await fetch(`/api/projects`, {
+      const response = await fetch(`${API}/api/projects`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -72,7 +72,7 @@ export default function ProjectDashboard() {
       try {
         // Your delete logic here
         const token = localStorage.getItem("token");
-        const response = await fetch(`/api/projects/${projectId}`, {
+        const response = await fetch(`${API}/api/projects/${projectId}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${token}`,

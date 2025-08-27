@@ -7,7 +7,7 @@ const AdminLoginPage = () => {
     password: '',
     rememberMe: false
   });
-  
+  const API = import.meta.env.VITE_API_URL || '/api';
   const [showPassword, setShowPassword] = useState(false);
   const [loginAttempts, setLoginAttempts] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +36,7 @@ const AdminLoginPage = () => {
     setSuccess('');
     
     try {
-      const response = await fetch('/api/admin/login', {
+      const response = await fetch(`${API}/api/admin/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

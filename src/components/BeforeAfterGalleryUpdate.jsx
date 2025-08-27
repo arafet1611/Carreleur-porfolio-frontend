@@ -26,7 +26,7 @@ export default function BeforeAfterGalleryUpdate({ project, onUpdate }) {
   const [error, setError] = useState(null);
   // Track loading states for individual items
   const [loadingItems, setLoadingItems] = useState(new Set());
-
+const API = import.meta.env.VITE_API_URL || '/api';
   // Initialize gallery items from project data
   useEffect(() => {
     if (project && project.beforeAndAfterGallery) {
@@ -82,7 +82,7 @@ const saveToDatabase = async (newItems) => {
       }
     });
 
-    const response = await fetch(`/api/projects/${project._id}/gallery`, {
+    const response = await fetch(`${API}/api/projects/${project._id}/gallery`, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -152,7 +152,7 @@ const deleteItem = async (id) => {
     const itemIndex = galleryItems.findIndex(item => item.id === id);
     if (itemIndex === -1) return;
 
-    const response = await fetch(`/api/projects/${project._id}/gallery/${itemIndex}`, {
+    const response = await fetch(`${API}/api/projects/${project._id}/gallery/${itemIndex}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
