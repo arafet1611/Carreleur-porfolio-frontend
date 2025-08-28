@@ -1,4 +1,4 @@
-import carreleur from "../../images/carreleur.jpg"; 
+import carreleur from "../assets/carreleur.jpg"; 
 import { useNavigate } from "react-router-dom";
 const AboutMe = () => {
     const navigate = useNavigate();

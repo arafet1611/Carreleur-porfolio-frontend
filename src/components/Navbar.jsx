@@ -6,7 +6,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   // For demo purposes - in your real app, this would check localStorage
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentPath, setCurrentPath] = useState("/");
   const navigate = useNavigate();
   // Handle scroll effect
@@ -25,10 +24,7 @@ const Navbar = () => {
   }, []);
 
   // Demo authentication toggle (replace with actual localStorage check in your app)
-  useEffect(() => {
-    const token = localStorage.getItem("adminToken");
-    if (token) setIsAuthenticated(true);
-  }, []);
+
 
   // Close mobile menu when clicking on a link
   const handleLinkClick = (path) => {
@@ -123,18 +119,7 @@ const Navbar = () => {
                 </button>
               </div>
 
-              {/* Admin Login/Dashboard Icon */}
-              <button
-                onClick={() =>
-                  handleLinkClick(isAuthenticated ? "/admin" : "/admin-login")
-                }
-                className={`p-2 transition-colors duration-300 ml-4 ${
-                  isScrolled ? "text-black" : "text-white"
-                }`}
-                title={isAuthenticated ? "Admin Dashboard" : "Admin Login"}
-              >
-                {isAuthenticated ? <LockOpen size={18} /> : <Lock size={18} />}
-              </button>
+              
 
               {/* Mobile Menu Button */}
               <button

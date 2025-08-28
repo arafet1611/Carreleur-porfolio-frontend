@@ -135,7 +135,7 @@ const API = import.meta.env.VITE_API_URL || '/api';
           <div className="max-w-7xl mx-auto relative overflow-hidden">
             {/* Header Section */}
             <div className="text-center mb-16">
-              <h1 className="text-lg md:text-2xl font-light tracking-[0.2em] text-gray-600 mb-8 font-medium uppercase">
+              <h1 className="text-lg md:text-2xl  tracking-[0.2em] text-gray-600 mb-8 font-medium uppercase">
                 NOS PROJETS D'EXCEPTION
               </h1>
               <div className="max-w-1xl mx-auto">
